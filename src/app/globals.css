@@ -4,16 +4,24 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 10;
+  --background-end-rgb: 10, 10, 10;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 10, 10, 10;
+    --background-end-rgb: 10, 10, 10;
   }
+}
+
+html,
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100vw;
 }
 
 body {
@@ -30,4 +38,26 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.static-overlay {
+  inset: -200%;
+  background-image: url("/hero-assets/noise.png");
+  opacity: 0.15;
+  animation: shift 0.2s linear infinite both;
+}
+
+@keyframes shift {
+  0% {
+    transform: translateX(10%) translateY(10%);
+  }
+
+  100% {
+    transform: translateX(-10%) translateY(-10%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
