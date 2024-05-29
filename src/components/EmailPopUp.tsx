@@ -70,7 +70,7 @@ function EmailPopUp() {
             </div>
             <input
               type="text"
-              className="bg-black border border-neutral-50 w-full font-thin text-center p-2 text-xs mb-3 mt-20 rounded-none"
+              className="bg-black border border-neutral-50 w-full font-thin text-center p-2 text-xs mb-3 mt-20 rounded-none focus:outline-none"
               placeholder="EMAIL ADDRESS"
               onChange={handleChange}
             />
