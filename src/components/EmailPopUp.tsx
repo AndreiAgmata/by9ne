@@ -53,6 +53,7 @@ function EmailPopUp() {
             alt="modal-image"
             fill
             className="object-cover absolute z-10 opacity-90"
+            priority
           />
           <div className="content z-40 flex flex-col items-center justify-center mt-14 w-full">
             <p className="font-medium text-xl">NEVER MISS A DROP</p>
@@ -64,6 +65,7 @@ function EmailPopUp() {
                 sizes="100vh"
                 className="object-contain"
                 alt="background image"
+                priority
               />
             </div>
             <input
