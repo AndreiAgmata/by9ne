@@ -1,3 +1,4 @@
+import EmailPopUp from "@/components/EmailPopUp";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Footer />
+      <EmailPopUp />
     </main>
   );
 }

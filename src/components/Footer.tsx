@@ -1,8 +1,38 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 
 function Footer() {
+  const [email, setEmail] = useState("");
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { value } = e.target;
+    setEmail(value);
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch("/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setEmail("");
+      } else {
+        console.error("Error:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    }
+  };
   return (
     <footer className="w-full mx-auto flex flex-col items-center justify-center px-4 pb-4">
       <div className="top w-full flex items-center justify-between mb-8">
@@ -21,10 +51,13 @@ function Footer() {
         type="text"
         className="bg-neutral-950 border-t border-gray-500 w-full max-w-3xl font-thin text-center p-4 text-xs"
         placeholder="EMAIL ADDRESS"
+        value={email}
+        onChange={handleChange}
       />
       <button
         type="button"
-        className="btn font-light text-center text-xs text-neutral-50 p-4 border w-full max-w-3xl"
+        className="btn font-light text-center text-xs text-neutral-50 p-4 border w-full max-w-3xl active:bg-neutral-800"
+        onClick={handleSubmit}
       >
         NEVER MISS A DROP
       </button>
