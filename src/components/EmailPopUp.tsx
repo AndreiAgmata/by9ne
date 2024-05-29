@@ -46,7 +46,7 @@ function EmailPopUp() {
   return (
     <section className="email-popUp" hidden={hide}>
       <div className="modal-container fixed h-screen w-screen z-50 top-0 inset-0 flex items-center justify-center ">
-        <div className="background-overlay w-full h-full absolute z-10 bg-black opacity-80"></div>
+        <div className="background-overlay w-full h-dvh absolute z-10 bg-black opacity-80"></div>
         <div className="modal w-[20rem] h-[28rem] bg-neutral-950 flex flex-col items-center justify-start p-7 relative">
           <Image
             src={"/modal-assets/girl-model.jpeg"}
