@@ -49,7 +49,7 @@ function Footer() {
       </div>
       <input
         type="text"
-        className="bg-neutral-950 border-t border-gray-500 w-full max-w-3xl font-thin text-center p-4 text-xs"
+        className="bg-neutral-950 border-t border-gray-500 w-full max-w-3xl font-thin text-center p-4 text-xs rounded-none"
         placeholder="EMAIL ADDRESS"
         value={email}
         onChange={handleChange}
